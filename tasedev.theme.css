@@ -1,0 +1,190 @@
+/**
+ * @name TaseDev Cyberpunk
+ * @description System24-based dark cyberpunk theme in the TaseDev palette.
+ * @author TaseDev
+ * @version 1.0.0
+ * @website https://blog.tasedev.me
+ */
+
+/* System24 supplies the complete Discord layout; the variables below theme it. */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* font */
+    --font: 'DM Mono';
+    --code-font: 'DM Mono';
+    font-weight: 300;
+    letter-spacing: -0.05ch;
+
+    /* sizes */
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+
+    /* animation/transition options */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    /* top bar options */
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    /* window controls */
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    /* dms button options */
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-subtle);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: off;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+
+    /* background image options */
+    --background-image: off;
+    --background-image-url: url('');
+
+    /* transparency/blur options */
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+
+    /* other options */
+    --small-user-panel: on;
+
+    /* unrounding options */
+    --unrounding: off;
+    --round-pfp: on;
+    --remove-pfp-decor: off;
+
+    /* styling options */
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+
+    /* panel labels */
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
+}
+
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: var(--bg-4);
+    --text-1: #edf7ff;
+    --text-2: #d9e7f2;
+    --text-3: #b4c7d8;
+    --text-4: #8398aa;
+    --text-5: #526577;
+
+    /* blue-black backgrounds */
+    --bg-1: #182537;
+    --bg-2: #131d2b;
+    --bg-3: #0e1520;
+    --bg-4: #090d14;
+    --hover: rgb(68 228 210 / 8%);
+    --active: rgb(68 228 210 / 14%);
+    --active-2: rgb(68 228 210 / 22%);
+    --message-hover: rgb(84 170 255 / 5%);
+
+    /* electric cyan accents */
+    --accent-1: #a0fff2;
+    --accent-2: #68f0df;
+    --accent-3: #44e4d2;
+    --accent-4: #27c9bd;
+    --accent-5: #159f9c;
+    --accent-new: #ff637d;
+    --mention: linear-gradient(to right, rgb(68 228 210 / 13%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, rgb(68 228 210 / 19%) 40%, transparent);
+    --reply: linear-gradient(to right, rgb(84 170 255 / 10%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, rgb(84 170 255 / 15%) 40%, transparent);
+
+    /* status indicator colors */
+    --online: #62e6a7;
+    --dnd: #ff637d;
+    --idle: #ffd166;
+    --streaming: #a879ff;
+    --offline: var(--text-4);
+
+    /* borders */
+    --border-light: rgb(68 228 210 / 8%);
+    --border: rgb(68 228 210 / 14%);
+    --border-hover: #44e4d2;
+    --button-border: rgb(128 184 210 / 18%);
+
+    /* base color ramps used by System24 components */
+    --red-1: #ff9aaa;
+    --red-2: #ff7c91;
+    --red-3: #ff637d;
+    --red-4: #e84d69;
+    --red-5: #c83a59;
+
+    --green-1: #9bffd0;
+    --green-2: #7af2b7;
+    --green-3: #62e6a7;
+    --green-4: #43cb91;
+    --green-5: #2ba875;
+
+    --blue-1: #a2d7ff;
+    --blue-2: #7dc4ff;
+    --blue-3: #54aaff;
+    --blue-4: #348ce8;
+    --blue-5: #2870bf;
+
+    --yellow-1: #ffe4a0;
+    --yellow-2: #ffd982;
+    --yellow-3: #ffd166;
+    --yellow-4: #e9b84f;
+    --yellow-5: #c99536;
+
+    --purple-1: #c6a9ff;
+    --purple-2: #b58dff;
+    --purple-3: #a879ff;
+    --purple-4: #8d5de3;
+    --purple-5: #7048bd;
+}
+
+/* Discord's member list uses these standard theme variables for its panel,
+   member names, role headings, and hover/selected rows. Keep them tied to the
+   System24 palette above so the list follows the same colors as the rest of
+   the theme. */
+.theme-dark {
+    --text-normal: var(--text-2);
+    --header-primary: var(--text-1);
+    --header-secondary: var(--text-3);
+    --channels-default: var(--text-3);
+    --text-muted: var(--text-4);
+    --interactive-normal: var(--text-4);
+    --interactive-muted: var(--text-5);
+    --interactive-hover: var(--text-1);
+    --interactive-active: var(--accent-2);
+
+    --background-primary: var(--bg-4);
+    --background-secondary: var(--bg-3);
+    --background-secondary-alt: var(--bg-2);
+    --background-tertiary: #080c12;
+    --background-floating: var(--bg-3);
+    --background-modifier-hover: var(--hover);
+    --background-modifier-active: var(--active);
+    --background-modifier-selected: var(--active);
+    --background-modifier-accent: rgb(84 170 255 / 16%);
+
+    --scrollbar-auto-thumb: #294154;
+    --scrollbar-auto-track: var(--bg-4);
+    --scrollbar-thin-thumb: #294154;
+    --scrollbar-thin-track: transparent;
+}
+
+
